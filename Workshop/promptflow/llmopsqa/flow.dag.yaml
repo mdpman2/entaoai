@@ -61,7 +61,7 @@ nodes:
     type: code
     path: create_llm.py
   inputs:
-    conn: llmops
+    conn: llmops3nc
     overrides: ${parse_postBody.output}
   use_variants: false
 - name: parse_postBody
@@ -106,7 +106,7 @@ nodes:
     path: create_embedding.py
   inputs:
     overrides: ${inputs.postBody}
-    conn: llmops
+    conn: llmops3nc
 - name: answer_the_question
   type: python
   source:
@@ -138,7 +138,7 @@ nodes:
     type: code
     path: embed_the_question.py
   inputs:
-    conn: llmops
+    conn: llmops3nc
     question: ${inputs.question}
     overrides: ${inputs.postBody}
 - name: extract_prompttemplate
