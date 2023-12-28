@@ -73,7 +73,8 @@ jobs:
     - name: setup endpoint
       run: |
         pushd './${{ env.WORKSHOP_PATH }}'    
-        az ml online-endpoint create --file promptflow/deployment/endpoint.yaml --name ${{env.ENDPOINT_NAME}}  -g ${{env.GROUP}} -w ${{env.WORKSPACE}} --set identity.user_assigned_identities[0].client_id=${{env.CLIENT_ID}} --set identity.user_assigned_identities[0].principal_id=${{env.PRINCIPAL_ID}} --set identity.user_assigned_identities[0].resource_id=${{env.UAMI_NAME}} --set identity.principal_id=${{env.PRINCIPAL_ID}} --set identity.tenant_id=${{env.TENANT_ID}}
+        #  az ml online-endpoint create --file promptflow/deployment/endpoint.yaml --name ${{env.ENDPOINT_NAME}}  -g ${{env.GROUP}} -w ${{env.WORKSPACE}} --set identity.user_assigned_identities[0].client_id=${{env.CLIENT_ID}} --set identity.user_assigned_identities[0].principal_id=${{env.PRINCIPAL_ID}} --set identity.user_assigned_identities[0].resource_id=${{env.UAMI_NAME}} --set identity.principal_id=${{env.PRINCIPAL_ID}} --set identity.tenant_id=${{env.TENANT_ID}}
+        az ml online-endpoint create --file promptflow/deployment/endpoint.yaml --name llmopsqa -g mdpman-rg -w llmops-demo --set identity.user_assigned_identities[0].client_id=06eb8648-83d2-4a8e-b870-b311307f5038 --set identity.user_assigned_identities[0].principal_id=f6102de6-8a88-4a80-a871-908cfd0c2379 --set identity.user_assigned_identities[0].resource_id=/subscriptions/d98b166c-6c17-4a86-a463-c27d7073ba05/resourcegroups/mdpman-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/chatpdfuami --set identity.principal_id=f6102de6-8a88-4a80-a871-908cfd0c2379 --set identity.tenant_id=97f42f55-f1db-4804-b1eb-08db083efd4f
         popd
 
     - name: setup deployment
