@@ -47,7 +47,7 @@ jobs:
 
     - name: set default subscription
       run: |
-         az account set -s "d98b166c-6c17-4a86-a463-c27d7073ba05"
+         az account set -s ${{env.SUBSCRIPTION}}
 
     - name: create Hash
       run: echo "HASH=$(echo -n $RANDOM | sha1sum | cut -c 1-6)" >> "$GITHUB_ENV"
