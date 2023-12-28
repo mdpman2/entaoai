@@ -73,7 +73,7 @@ jobs:
     - name: setup endpoint
       run: |
         pushd './${{ env.WORKSHOP_PATH }}'    
-        az ml online-endpoint create --file promptflow/deployment/endpoint.yaml --name ${{env.ENDPOINT_NAME}}  -g ${{env.GROUP}} -w ${{env.WORKSPACE}} --set identity.user_assigned_identities[0].client_id=${{env.CLIENT_ID}} --set identity.user_assigned_identities[0].principal_id=${{env.PRINCIPAL_ID}} --set identity.user_assigned_identities[0].resource_id=${{env.UAMI_ID}} --set identity.principal_id=${{env.PRINCIPAL_ID}} --set identity.tenant_id=${{env.TENANT_ID}}
+        az ml online-endpoint create --file promptflow/deployment/endpoint.yaml --name ${{env.ENDPOINT_NAME}}  -g ${{env.GROUP}} -w ${{env.WORKSPACE}} --set identity.user_assigned_identities[0].client_id=${{env.CLIENT_ID}} --set identity.user_assigned_identities[0].principal_id=${{env.PRINCIPAL_ID}} --set identity.user_assigned_identities[0].resource_id=${{env.UAMI_NAME}} --set identity.principal_id=${{env.PRINCIPAL_ID}} --set identity.tenant_id=${{env.TENANT_ID}}
         popd
 
     - name: setup deployment
