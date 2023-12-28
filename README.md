@@ -109,3 +109,5 @@ We are open to contributions, whether it is in the form of new feature, update e
 ### Note
 
 >Adapted from the repo at [OpenAI-CogSearch](https://github.com/Azure-Samples/azure-search-openai-demo/),  [Call Center Analytics](https://github.com/amulchapla/AI-Powered-Call-Center-Intelligence), [Auto Evaluator](https://github.com/langchain-ai/auto-evaluator) and [Edgar Crawler](https://github.com/nlpaueb/edgar-crawler)
+
+
